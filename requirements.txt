@@ -1,0 +1,6 @@
+playwright
+beautifulsoup4
+psycopg2-binary 
+Flask
+gunicorn
+python-dotenv
