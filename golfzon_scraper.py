@@ -22,7 +22,7 @@ def load_all_courses(page, max_stagnant_rounds=3, pause_ms=800):
             load_more = page.get_by_role("button", name=re.compile(r"(more|load)", re.I))
             if load_more.is_visible():
                 load_more.click()
-                page.wait_for_load_state("domcontentloaded")
+                page.wait_for_load_state("networkidle")
         except Exception:
             pass
 
@@ -152,7 +152,7 @@ def main():
         listing_page = browser.new_page()
 
         # Load listing page
-        listing_page.goto(URL, wait_until="domcontentloaded")
+        listing_page.goto(URL, wait_until="networkidle")
         listing_page.wait_for_selector("#search-course-body", timeout=20000)
 
         # Scroll/load all courses
@@ -182,7 +182,7 @@ def main():
             try:
                 # 👉 Open detail in a new tab
                 detail_page = browser.new_page()
-                detail_page.goto(course_url, wait_until="domcontentloaded", timeout=30000)
+                detail_page.goto(course_url, wait_until="networkidle", timeout=30000)
                 detail_page.wait_for_timeout(500)
 
                 detail_html = detail_page.content()

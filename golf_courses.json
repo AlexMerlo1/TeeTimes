@@ -267,7 +267,7 @@
     "name": "Short&Long Par3 CC",
     "url": "https://www.global.golfzon.com/courses/100300004",
     "holes": null,
-    "par": 3,
+    "par": null,
     "yardage": null,
     "per_hole": {}
   },
@@ -275,7 +275,7 @@
     "name": "GGC Par3 CC",
     "url": "https://www.global.golfzon.com/courses/100300002",
     "holes": null,
-    "par": 3,
+    "par": null,
     "yardage": null,
     "per_hole": {}
   },
