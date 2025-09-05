@@ -1,6 +1,6 @@
 import json
 
-with open("golf_courses.json", "r") as f:
+with open("golf_courses copy.json", "r") as f:
     courses = json.load(f)
 
 def parse_hole_input(hole_input, total_holes=None):
@@ -59,3 +59,19 @@ if __name__ == "__main__":
             display_hole_info(selected_course, holes)
         else:
             print("Invalid choice.")
+        import json
+
+        with open("golf_courses.json", "r") as f:
+            courses = json.load(f)
+
+        count = 0
+        for course in courses:
+            for hole_num, hole_data in course.get("per_hole", {}).items():
+                tees = hole_data.get("tees", [])
+                if len(tees) > 5:
+                    print(f"{course['name']} - Hole {hole_num}: {len(tees)} tees")
+                    count += 1
+                    if count == 1:
+                        break
+            if count == 1:
+                break
