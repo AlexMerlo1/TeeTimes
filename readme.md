@@ -25,7 +25,7 @@ With it, you can:
    playwright install
    (or python -m playwright install)
 ## Usage
-- python golfzon_scraper.py --limit 5 (can use to limit how many courses are scraped)
+- python golfzon_scraper.py --limit 5 (optional - can use to limit how many courses are scraped)
 - streamlit run visual.py
 - (OR python -m streamlit run .\visual.py -- --json         golf_courses.json)
 
